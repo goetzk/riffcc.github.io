@@ -153,7 +153,19 @@ Do you approve? (y/N) · true
 
     Copy the `ws` listening address for later usage - for example, `/ip4/127.0.0.1/tcp/8002/ws/p2p/12D3KooWAo2AC2Aga6gxon6Fd8jXMoxRtBkQrBBK3hsuQs3wtnNT`.
 
+If not running in a screen session, continue with Flagship install in a different tab/session to allow running it and lens simultaneously.
+
+
 ## Installing Flagship
+
+Before installing Flagship, you must install the following dependencies:
+
+```sh
+sudo apt install libnss3 libatk1.0-0 libatk-bridge2.0-0 libcups2 libgbm1 libgtk-3-0 libasound2
+```
+
+The dependencies above are from Debian, for Ubuntu use 'libasound2t64' instead of libasound2.
+
 
 1. Clone Flagship's GitHub repository:
     ```sh
@@ -171,7 +183,7 @@ Do you approve? (y/N) · true
     cp .env.example .env
     ```
 
-4. Edit the `.env` file to set the `VITE_SITE_ADDRESS` variable to the Site Address you saved earlier. Set the `VITE_BOOTSTRAPPERS` variable to the `ws` listening address you copied earlier.
+4. Edit the `.env` file to set the `VITE_SITE_ADDRESS` variable to the Site Address `lens-node setup` saved earlier. Set the `VITE_BOOTSTRAPPERS` variable to the `ws` listening address you copied earlier.
 
 5. Run the application in development mode (with hot reloading):
     ```sh
