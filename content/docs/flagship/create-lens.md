@@ -25,20 +25,9 @@ Point your domain name or subdomain at your server's IP address using an A or AA
 
 You can check with your hosting provider for information on how to do this, or ask us for help.
 
-## Preparation
-
-You'll need to do a little bit of prep work before you begin.
-
-### Dependencies
-Before installing Flagship, you must install the following dependencies:
-
-```sh
-sudo apt install libnss3-dev libgtk-3-0 libgbm1 libasound2-dev libatk1.0-0 node-pre-gyp git curl
-```
-
 ### Node.js
 
-You'll also need to install Node.js.
+You'll need to install Node.js, at least version 22.
 
 We suggest using the [NodeSource installation guide](https://github.com/nodesource/distributions#installation-instructions).
 
@@ -51,7 +40,7 @@ sudo mkdir -p /etc/apt/keyrings
 curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
 ```
 
-2. Create deb repository
+2. Add deb repository configuration
 
 ```sh
 echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_22.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
@@ -92,7 +81,7 @@ Use `pnpm` to install the Lens Node.
 pnpm install -g @riffcc/lens-node
 ```
 
-If prompted, also run `pnpm approve-builds -g` to allow dependencies to be built properly.
+If prompted, also run `pnpm approve-builds -g` (selecting 'a' and 'y' when prompted) to allow dependencies to be built properly.
 
 ```
 wings@blackberry:~$ pnpm approve-builds -g
